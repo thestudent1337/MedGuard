@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedGuard Evaluation Lab</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="backdrop"></div>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Healthcare Security Research</p>
+          <h1>Evaluation Lab</h1>
+          <p class="lede">
+            Run benchmark cases from the research dataset across `heuristic`, `llm`, and `hybrid` gatekeepers. Use the case browser to replay individual prompts in an isolated sandbox.
+          </p>
+          <p class="lede">
+            <a class="inline-link" href="/">Open main console</a>
+          </p>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric">
+            <span class="metric-label">Dataset Cases</span>
+            <strong id="dataset-total">Loading...</strong>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Benchmark Cases</span>
+            <strong id="benchmark-total">Loading...</strong>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Languages</span>
+            <strong id="dataset-languages">Loading...</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace single-column">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Run Benchmarks</h2>
+          </div>
+
+          <div class="eval-controls">
+            <label class="field compact-field">
+              <span>Detector Mode</span>
+              <select id="eval-detector-mode">
+                <option value="heuristic">heuristic</option>
+                <option value="llm">llm</option>
+                <option value="hybrid" selected>hybrid</option>
+                <option value="all">all 3 detectors</option>
+              </select>
+            </label>
+            <button id="run-eval-button" class="primary">Run Evaluation</button>
+          </div>
+
+          <div id="eval-status" class="status-banner neutral">No evaluation run yet.</div>
+
+          <div class="dataset-summary-grid">
+            <section class="detail-block">
+              <div class="panel-header compact-header">
+                <h3>Categories</h3>
+                <div class="button-row compact-button-row">
+                  <button id="select-all-categories" class="secondary" type="button">Select All</button>
+                  <button id="clear-all-categories" class="secondary" type="button">Clear</button>
+                </div>
+              </div>
+              <div id="category-summary" class="summary-list"></div>
+            </section>
+            <section class="detail-block">
+              <h3>Prompts From Selected Categories</h3>
+              <div id="category-prompts" class="case-list compact-case-list"></div>
+            </section>
+          </div>
+
+          <section class="detail-block">
+            <div class="panel-header compact-header">
+              <h3>Results Graph</h3>
+              <span class="muted-line">Grouped bar chart of passed vs failed benchmark cases by detector mode.</span>
+            </div>
+            <div id="evaluation-graph" class="evaluation-graph">
+              <p class="muted-line">Run the benchmark to populate the graph.</p>
+            </div>
+          </section>
+
+          <section class="detail-block">
+            <div class="panel-header compact-header">
+              <h3>Live Evaluation Log</h3>
+              <span class="muted-line">Per-case benchmark output appears here while the run is in progress.</span>
+            </div>
+            <div id="evaluation-live-log" class="live-evaluation-log">
+              <p class="muted-line">No evaluation run yet.</p>
+            </div>
+          </section>
+
+          <section class="detail-block">
+            <h3>Evaluation Results</h3>
+            <div id="evaluation-results" class="evaluation-results">
+              <p class="muted-line">Run the benchmark to populate results.</p>
+            </div>
+          </section>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Dataset Browser</h2>
+          </div>
+
+          <div class="eval-controls">
+            <label class="field compact-field">
+              <span>Filter</span>
+              <select id="dataset-filter">
+                <option value="all">all cases</option>
+                <option value="benchmark">benchmark only</option>
+                <option value="es">spanish only</option>
+              </select>
+            </label>
+            <label class="field compact-field">
+              <span>Case Detector</span>
+              <select id="case-detector-mode">
+                <option value="heuristic">heuristic</option>
+                <option value="llm">llm</option>
+                <option value="hybrid" selected>hybrid</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="case-list" class="case-list"></div>
+
+          <section class="detail-block">
+            <h3>Case Replay</h3>
+            <pre id="case-replay-output">Choose a dataset case and run it to inspect the selected detector's decision.</pre>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="/evals.js"></script>
+  </body>
+</html>

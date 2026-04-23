@@ -1,0 +1,127 @@
+[
+  {
+    "id": "P1001",
+    "name": "Alice Carter",
+    "dob": "1983-08-14",
+    "gender": "Female",
+    "contact": {
+      "phone": "555-213-4401",
+      "email": "alice.carter@example.test",
+      "address": "2410 Willow Bend Dr, Austin, TX"
+    },
+    "diagnoses": ["Type 2 Diabetes", "Hypertension"],
+    "medications": ["Metformin 1000 mg", "Lisinopril 20 mg"],
+    "allergies": ["Penicillin"],
+    "labs": [
+      {"name": "A1C", "value": "6.8", "unit": "%", "date": "2026-03-02"},
+      {"name": "LDL Cholesterol", "value": "119", "unit": "mg/dL", "date": "2026-02-10"},
+      {"name": "Creatinine", "value": "0.9", "unit": "mg/dL", "date": "2026-01-22"}
+    ],
+    "appointments": [
+      {"date": "2026-05-11", "type": "Endocrinology follow-up", "clinician": "Dr. Brown"}
+    ],
+    "notes": [
+      "Patient reports good medication adherence but inconsistent exercise.",
+      "Recommended repeat A1C in three months."
+    ]
+  },
+  {
+    "id": "P1002",
+    "name": "Samuel Patel",
+    "dob": "1977-01-05",
+    "gender": "Male",
+    "contact": {
+      "phone": "555-821-1034",
+      "email": "samuel.patel@example.test",
+      "address": "80 Lakefront Ave, Madison, WI"
+    },
+    "diagnoses": ["Asthma", "Hyperlipidemia"],
+    "medications": ["Albuterol inhaler", "Atorvastatin 20 mg"],
+    "allergies": ["Latex"],
+    "labs": [
+      {"name": "Total Cholesterol", "value": "201", "unit": "mg/dL", "date": "2026-03-20"},
+      {"name": "Triglycerides", "value": "172", "unit": "mg/dL", "date": "2026-03-20"}
+    ],
+    "appointments": [
+      {"date": "2026-04-29", "type": "Primary care", "clinician": "Dr. Brown"}
+    ],
+    "notes": [
+      "Asthma currently controlled on rescue inhaler.",
+      "Discussed dietary changes for lipid management."
+    ]
+  },
+  {
+    "id": "P1003",
+    "name": "Priya Nguyen",
+    "dob": "1991-06-18",
+    "gender": "Female",
+    "contact": {
+      "phone": "555-440-9912",
+      "email": "priya.nguyen@example.test",
+      "address": "14 Birch Hollow Rd, Denver, CO"
+    },
+    "diagnoses": ["Migraine", "Anxiety"],
+    "medications": ["Sumatriptan 50 mg", "Sertraline 50 mg"],
+    "allergies": ["Sulfa drugs"],
+    "labs": [
+      {"name": "TSH", "value": "2.1", "unit": "uIU/mL", "date": "2026-01-12"}
+    ],
+    "appointments": [
+      {"date": "2026-05-02", "type": "Neurology consult", "clinician": "Dr. Torres"}
+    ],
+    "notes": [
+      "Migraine frequency improved after medication adjustment.",
+      "Anxiety symptoms stable on current SSRI."
+    ]
+  },
+  {
+    "id": "P1004",
+    "name": "Marcus Johnson",
+    "dob": "1968-11-30",
+    "gender": "Male",
+    "contact": {
+      "phone": "555-773-2814",
+      "email": "marcus.johnson@example.test",
+      "address": "999 Cedar Point Ln, Tulsa, OK"
+    },
+    "diagnoses": ["Chronic Kidney Disease", "Hypertension"],
+    "medications": ["Amlodipine 10 mg", "Losartan 50 mg"],
+    "allergies": ["None known"],
+    "labs": [
+      {"name": "Creatinine", "value": "1.6", "unit": "mg/dL", "date": "2026-03-14"},
+      {"name": "eGFR", "value": "51", "unit": "mL/min/1.73m2", "date": "2026-03-14"},
+      {"name": "Potassium", "value": "4.9", "unit": "mmol/L", "date": "2026-03-14"}
+    ],
+    "appointments": [
+      {"date": "2026-05-19", "type": "Nephrology follow-up", "clinician": "Dr. Singh"}
+    ],
+    "notes": [
+      "CKD remains stable but needs quarterly monitoring.",
+      "Reviewed low-sodium diet and blood pressure tracking."
+    ]
+  },
+  {
+    "id": "P1005",
+    "name": "Elena Ruiz",
+    "dob": "2000-02-21",
+    "gender": "Female",
+    "contact": {
+      "phone": "555-609-7122",
+      "email": "elena.ruiz@example.test",
+      "address": "55 Orchard Hill Ct, Phoenix, AZ"
+    },
+    "diagnoses": ["Iron Deficiency Anemia"],
+    "medications": ["Ferrous sulfate 325 mg"],
+    "allergies": ["Peanuts"],
+    "labs": [
+      {"name": "Hemoglobin", "value": "10.8", "unit": "g/dL", "date": "2026-02-28"},
+      {"name": "Ferritin", "value": "12", "unit": "ng/mL", "date": "2026-02-28"}
+    ],
+    "appointments": [
+      {"date": "2026-04-25", "type": "Student health follow-up", "clinician": "NP Willis"}
+    ],
+    "notes": [
+      "Energy level slightly improved after starting iron supplement."
+    ]
+  }
+]

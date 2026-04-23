@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedGuard Admin</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="admin-body">
+    <div class="backdrop"></div>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Security Console</p>
+          <h1>MedGuard Admin</h1>
+          <p class="lede">
+            Review incidents, inspect detection decisions, and benchmark the monitoring agent against curated adversarial and benign healthcare prompts.
+          </p>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric">
+            <span class="metric-label">Logged Incidents</span>
+            <strong id="admin-incident-count">0</strong>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Benchmark</span>
+            <strong id="benchmark-summary">Not run</strong>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Latest Risk</span>
+            <strong id="latest-risk">Idle</strong>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Detector</span>
+            <strong id="detector-status">Heuristic only</strong>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Storage</span>
+            <strong id="storage-status">SQLite</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace admin-grid">
+        <div class="panel compose">
+          <div class="panel-header">
+            <h2>Detection Lab</h2>
+            <a class="inline-link" href="/">Open User App</a>
+          </div>
+
+          <label class="field">
+            <span>Principal</span>
+            <select id="admin-principal-select"></select>
+          </label>
+
+          <div class="sample-prompt-wrap">
+            <span>Attack library</span>
+            <div id="attack-prompts" class="sample-prompts"></div>
+          </div>
+
+          <label class="field">
+            <span>Prompt To Analyze</span>
+            <textarea id="admin-message-input" rows="6" placeholder="Enter a prompt to simulate detection. This sandbox does not change live app data."></textarea>
+          </label>
+
+          <div class="button-row">
+            <button id="simulate-button" class="primary">Simulate Detection</button>
+            <button id="benchmark-button" class="secondary">Run Benchmark</button>
+          </div>
+
+          <section class="detail-block">
+            <h3>Simulation Result</h3>
+            <div id="admin-decision-card" class="decision-card idle">
+              <div>
+                <span class="label">Risk</span>
+                <strong id="admin-risk">No run yet</strong>
+              </div>
+              <div>
+                <span class="label">Attack type</span>
+                <strong id="admin-attack">None</strong>
+              </div>
+              <div>
+                <span class="label">Policy</span>
+                <strong id="admin-policy">None</strong>
+              </div>
+            </div>
+            <p id="admin-policy-message">No simulation run yet.</p>
+          </section>
+
+          <section class="detail-block">
+            <h3>Score Breakdown</h3>
+            <div id="score-breakdown" class="score-grid">
+              <div class="metric metric-inline">
+                <span class="metric-label">Final Score</span>
+                <strong id="final-score">N/A</strong>
+              </div>
+              <div class="metric metric-inline">
+                <span class="metric-label">Source</span>
+                <strong id="score-source">N/A</strong>
+              </div>
+              <div class="metric metric-inline">
+                <span class="metric-label">Planner Confidence</span>
+                <strong id="planner-confidence">N/A</strong>
+              </div>
+              <div class="metric metric-inline">
+                <span class="metric-label">Heuristic Score</span>
+                <strong id="heuristic-score">N/A</strong>
+              </div>
+              <div class="metric metric-inline">
+                <span class="metric-label">LLM Score</span>
+                <strong id="llm-score">N/A</strong>
+              </div>
+              <div class="metric metric-inline">
+                <span class="metric-label">LLM Used</span>
+                <strong id="llm-used">No</strong>
+              </div>
+              <div class="metric metric-inline">
+                <span class="metric-label">LLM Model</span>
+                <strong id="llm-model">N/A</strong>
+              </div>
+            </div>
+            <p id="llm-error" class="muted-line">No LLM classifier status yet.</p>
+          </section>
+
+          <section class="detail-block">
+            <h3>Planner Output</h3>
+            <pre id="admin-planner-output">No tool call yet.</pre>
+          </section>
+
+          <section class="detail-block">
+            <h3>Planner Notes</h3>
+            <ul id="planner-note-list" class="reason-list">
+              <li>No planner notes yet.</li>
+            </ul>
+          </section>
+
+          <section class="detail-block">
+            <h3>Monitor Reasoning</h3>
+            <ul id="admin-reason-list" class="reason-list">
+              <li>No monitor output yet.</li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="panel analysis">
+          <div class="panel-header">
+            <h2>Incidents And Benchmarks</h2>
+            <button id="refresh-incidents" class="secondary">Refresh</button>
+          </div>
+
+          <section class="detail-block">
+            <h3>Incident Stats</h3>
+            <pre id="incident-stats">No incidents yet.</pre>
+          </section>
+
+          <section class="detail-block">
+            <h3>Incident Log</h3>
+            <div id="admin-incident-log" class="incident-log"></div>
+          </section>
+
+          <section class="detail-block">
+            <h3>Benchmark Results</h3>
+            <div id="benchmark-results" class="benchmark-results">
+              <p>No benchmark run yet.</p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="/security_console.js"></script>
+  </body>
+</html>
