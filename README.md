@@ -1,5 +1,8 @@
 # MedGuard
 
+<img width="2565" height="1880" alt="image" src="https://github.com/user-attachments/assets/300d848a-a869-489a-9863-44df305e697c" />
+
+
 MedGuard is a mock healthcare assistant built for a high-risk AI-in-healthcare course project. It compares three prompt-monitoring strategies in front of a tool-using chatbot:
 
 - `heuristic` detection
